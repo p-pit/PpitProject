@@ -1,0 +1,38 @@
+<?php 
+/*
+header('Content-Type: text/csv; charset=utf-8');
+header("Content-disposition: filename=commitment-".date('Y-m-d').".csv");
+echo "\xEF\xBB\xBF";
+ 
+echo $this->translate('Project', 'ppit-project', $context->getLocale()).";";
+echo $this->translate('Account', 'ppit-commitment', $context->getLocale()).";";
+echo $this->translate('Phase', 'ppit-project', $context->getLocale()).";";
+echo $this->translate('Deliverable', 'ppit-project', $context->getLocale()).";";
+echo $this->translate('Responsible', 'ppit-project', $context->getLocale()).";";
+echo $this->translate('Status', 'ppit-core', $context->getLocale()).";";
+echo $this->translate('Initial due date', 'ppit-project', $context->getLocale()).";";
+echo $this->translate('New due date', 'ppit-project', $context->getLocale()).";";
+echo $this->translate('Actual delivery date', 'ppit-project', $context->getLocale()).";";
+
+foreach($context->getInstance()->specifications['ppitProject']['properties'] as $propertyId => $property) {
+	echo $property['labels'][$context->getLocale()].";";
+}
+echo "\n";
+
+foreach ($deliverables as $deliverable) {
+	echo $deliverable->project.';';
+	echo $deliverable->customer_name.';';
+	echo $deliverable->phase.';';
+	echo $deliverable->deliverable.';';
+	echo $deliverable->responsible.';';
+	echo $context->getInstance()->specifications['ppitProject']['statuses'][$deliverable->status]['labels']['fr_FR'].';';
+	echo $context->decodeDate($deliverable->initial_due_date).';';
+	echo $context->decodeDate($deliverable->new_due_date).';';
+	echo $context->decodeDate($deliverable->actual_delivery_date).';';
+	
+	foreach($context->getInstance()->specifications['ppitCommitment']['properties'] as $propertyId => $property) {
+		echo (($deliverable->properties[$propertyId]) ? "'".$deliverable->properties[$propertyId] : '').';';
+	}
+			
+	echo "\n";
+}*/
