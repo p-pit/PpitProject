@@ -30,7 +30,7 @@ foreach ($deliverables as $deliverable) {
 	echo $context->decodeDate($deliverable->new_due_date).';';
 	echo $context->decodeDate($deliverable->actual_delivery_date).';';
 	
-	foreach($context->getInstance()->specifications['ppitCommitment']['properties'] as $propertyId => $property) {
+	foreach($context->getConfig('commitment')['properties'] as $propertyId => $property) {
 		echo (($deliverable->properties[$propertyId]) ? "'".$deliverable->properties[$propertyId] : '').';';
 	}
 			
