@@ -106,6 +106,8 @@ return array(
 	),
 
 	'ppitRoles' => array(
+			'PpitProject' => array(
+			),
 	),
 	'ppitCommitmentDependencies' => array(
 	),
