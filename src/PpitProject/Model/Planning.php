@@ -94,7 +94,7 @@ class Planning implements InputFilterAwareInterface
     	$context = Context::getCurrent();
     	$select = Planning::getTable()->getSelect()
 	    	->join('commitment_account', 'project_planning.account_id = commitment_account.id', array(), 'left')
-    		->join('contact_community', 'commitment_account.customer_community_id = contact_community.id', array('customer_name' => 'name'), 'left');
+    		->join('core_community', 'commitment_account.customer_community_id = core_community.id', array('customer_name' => 'name'), 'left');
     	 
     	$where = new Where();
     
